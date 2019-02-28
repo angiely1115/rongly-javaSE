@@ -1,6 +1,7 @@
 package practice.TestString;
 
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.function.Try;
 
 /**
  * @Author lvrongzhuan
@@ -26,5 +27,15 @@ public class StringTest {
 
         System.out.println("几号库："+8393990%12/4);
         System.out.println("几号表："+8393990%12%4);
+
+        try {
+            System.out.println("执行try内容");
+//            throw new RuntimeException("异常了");
+        }finally {
+            System.out.println("执行finally 内容");
+        }
+        System.out.println("执行其他内容");
     }
+
+
 }
