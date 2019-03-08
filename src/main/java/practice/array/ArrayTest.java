@@ -1,6 +1,5 @@
 package practice.array;
 
-import com.sun.deploy.util.ArrayUtil;
 
 /**
  * @Author: lvrongzhuan

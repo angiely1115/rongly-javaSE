@@ -1,6 +1,5 @@
 package practice.collections;
 
-import jdk.management.resource.internal.inst.SocketOutputStreamRMHooks;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -45,6 +44,7 @@ public class CollectionTest {
         stringMap.get("3");
         stringMap.replace("3","hah");
         stringMap.remove("3");
+        Hashtable<String,String> hashTable = new Hashtable<>();
         for (int binCount = 0; ; ++binCount){
             System.out.println("binCount:"+binCount);
         }

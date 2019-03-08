@@ -13,10 +13,12 @@ import java.io.*;
 public class TestObjectStream {
 
     @Test
-    public void Test1() throws Exception {
+    public void test1() throws Exception {
         OutputStream outputStream = new FileOutputStream("a.txt");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-        objectOutputStream.writeObject(new Person("lv",66,"西湖"));
+        Person person = new Person("lv",66,"永州城");
+        Person.nikeName = "小白";
+        objectOutputStream.writeObject(person);
         outputStream.close();
         objectOutputStream.close();
         InputStream inputStream = new FileInputStream("a.txt");

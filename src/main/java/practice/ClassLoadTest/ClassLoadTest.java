@@ -3,7 +3,6 @@ package practice.ClassLoadTest;
 import org.junit.jupiter.api.Test;
 import practice.ClassLoadTest.myClassLoad.CustomClassLoader;
 import practice.ClassLoadTest.myClassLoad.Parent2;
-import sun.misc.ClassLoaderUtil;
 
 import java.util.Arrays;
 
