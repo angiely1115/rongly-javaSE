@@ -16,6 +16,7 @@ public class ArrayTest {
         System.out.println(int.class);
         System.out.println(double.class.getConstructors());
         System.out.println(long.class);
+        System.out.println(Long.class);
         System.out.println(void.class);
     }
 }

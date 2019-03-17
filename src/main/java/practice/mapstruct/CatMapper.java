@@ -15,7 +15,7 @@ public interface CatMapper {
 
     CatMapper CAT_MAPPER = Mappers.getMapper(CatMapper.class);
 
-    CatPo CatVoToCatPo(CatVo catVo);
+    CatPo catVoToCatPo(CatVo catVo);
 
-    CatVo CatPoToCatVo(CatPo catPo);
+    CatVo catPoToCatVo(CatPo catPo);
 }

@@ -68,6 +68,7 @@ practice\IO\nio\buffer\ReadOnlyBuffer.class
 practice\JVM\GenericTypsTest.class
 practice\mapstruct\CatPo.class
 practice\proxy\Mic.class
+practice\algorithm\sort\SortTest.class
 practice\extan\Father.class
 practice\IO\aio\AIOServer$1.class
 practice\ClassLoadTest\optimistic\OptimisticReference1.class

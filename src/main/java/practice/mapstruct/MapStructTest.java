@@ -23,7 +23,7 @@ public class MapStructTest {
         Map<String,String> stringMap = Maps.newHashMap();
         stringMap.put("mapstruct","map");
         catVo.setStringMap(stringMap);
-        CatPo catPo = CatMapper.CAT_MAPPER.CatVoToCatPo(catVo);
+        CatPo catPo = CatMapper.CAT_MAPPER.catVoToCatPo(catVo);
         System.out.println(catPo);
     }
 }

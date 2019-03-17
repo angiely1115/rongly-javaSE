@@ -26,8 +26,8 @@ public class SortTest {
                     ints[i] = b;
                     ints[j] = a;
                 } else if (!asce && a < b) {
-                    ints[i] = b;
-                    ints[j] = a;
+                    ints[i] = a;
+                    ints[j] = b;
                 }
             }
         }
@@ -46,8 +46,8 @@ public class SortTest {
                     ints[j] = b;
                     ints[j+1] = a;
                 } else if (!asce && a < b) {
-                    ints[j] = b;
-                    ints[j+1] = a;
+                    ints[j] = a;
+                    ints[j+1] = b;
                 }
             }
         }

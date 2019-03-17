@@ -6,13 +6,13 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2019-03-08T17:25:06+0800",
+    date = "2019-03-17T11:01:12+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_201 (Oracle Corporation)"
 )
 public class CatMapperImpl implements CatMapper {
 
     @Override
-    public CatPo CatVoToCatPo(CatVo catVo) {
+    public CatPo catVoToCatPo(CatVo catVo) {
         if ( catVo == null ) {
             return null;
         }
@@ -31,7 +31,7 @@ public class CatMapperImpl implements CatMapper {
     }
 
     @Override
-    public CatVo CatPoToCatVo(CatPo catPo) {
+    public CatVo catPoToCatVo(CatPo catPo) {
         if ( catPo == null ) {
             return null;
         }

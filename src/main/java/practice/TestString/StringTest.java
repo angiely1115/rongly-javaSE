@@ -37,5 +37,29 @@ public class StringTest {
         System.out.println("执行其他内容");
     }
 
+    @Test
+    public void testInteger(){
+        Integer integer = 128;
+        Integer integer1 = 128;
+        System.out.println(integer==integer1);
+        testSwitchForInteger(1111);
+        testSwitchForInteger(127);
+        testSwitchForInteger(129);
+    }
+
+    private void testSwitchForInteger(Integer integer){
+        switch (integer) {
+            case 1111:
+                System.out.println("1111");
+                break;
+            case 127:
+                System.out.println("127");
+                break;
+             default:
+                 System.out.println("default");
+                 break;
+
+        }
+    }
 
 }
