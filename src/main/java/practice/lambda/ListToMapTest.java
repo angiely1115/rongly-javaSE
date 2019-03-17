@@ -19,11 +19,21 @@ import java.util.stream.Collectors;
  * modified by:
  */
 public class ListToMapTest {
+    private static String string = "static";
+
+    /**
+     * 静态内部类只能访问外部的静态属性和静态方法
+     * 非静态内部类不能创建静态成员变量和静态方法
+     */
     @Data
     @AllArgsConstructor
-    public class User {
-        private String userName;
+    public static class User {
+        private  String userName;
         private int age;
+
+        public void inner() {
+            System.out.println(string);
+        }
 
     }
 

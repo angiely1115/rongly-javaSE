@@ -10,6 +10,7 @@ practice\IO\bio\BIOClient$1.class
 practice\threadLocal\Demo.class
 practice\threadLocal\ThreadLocalDemo.class
 practice\ClassLoadTest\optimistic\OptimisticReference2.class
+practice\lombok\DelegateTest.class
 practice\IO\nio\buffer\BufferSlice.class
 practice\IO\bio\OioServer.class
 practice\innerClass\OuterClass$InnerClass.class
@@ -49,6 +50,7 @@ practice\IO\nio\buffer\MappedBuffer.class
 practice\proxy\JDKDynamicProxy.class
 practice\ClassLoadTest\Negative\NegativeReference1.class
 practice\extan\Son.class
+practice\lombok\Extensions.class
 practice\IO\nio\demo\NIOServer.class
 practice\IO\nio\server\NIOFileServer4.class
 practice\juc\EatThread.class
@@ -71,9 +73,11 @@ practice\proxy\Mic.class
 practice\algorithm\sort\SortTest.class
 practice\extan\Father.class
 practice\IO\aio\AIOServer$1.class
+practice\lombok\ExtensionMethodDemo.class
 practice\ClassLoadTest\optimistic\OptimisticReference1.class
 practice\IO\aio\AIOServer.class
 practice\juc\CyclicBarrierTest.class
+practice\lombok\DelegateTest$SimpleCollection.class
 practice\system\SystemClock$2.class
 practice\innerClass\OuterClass$staticInnerClass.class
 practice\juc\ThreadExceptionTest.class

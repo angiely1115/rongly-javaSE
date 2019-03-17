@@ -1,6 +1,8 @@
 package practice.innerClass;
 
 
+import javax.sound.sampled.Line;
+
 /**
  * @Author lvrongzhuan
  * @desc: 内部类
