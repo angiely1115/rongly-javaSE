@@ -109,5 +109,9 @@ public class ListToMapTest {
        })).collect(Collectors.toList());
         System.out.println(list1);
 
+        System.out.println(list.stream().map(User::getAge).collect(Collectors.toList()));
+
+        System.out.println(BigDecimal.ZERO.subtract(BigDecimal.valueOf(1223.06)));
+        System.out.println(BigDecimal.ZERO);
     }
 }

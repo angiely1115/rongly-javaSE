@@ -161,4 +161,27 @@ public class CollectionTest {
     public String[] getStrs(String s){
         return new String[]{s.toUpperCase()};
     }
+
+    @Test
+    public void mapRemoveTest(){
+        //如果自定义对象作为key 一定要重新equals和hashcode方法
+        //定义容量 (预存储大小/0.75)+1
+        //put的主要步骤:
+        /**
+         * 1.计算重新计算hash值
+         * 2.第一次put 调用resize()方法进行扩容和扩容阀值的计算等
+         * 3.计算hash值对应数组的下标，如果没有值就直接存放 有值比较hash值 放入链表中
+         */
+        HashMap<String,String> stringMap = new HashMap<>();
+        stringMap.put("1","吕荣砖");
+        stringMap.put("2","赵雅芝");
+        stringMap.put("3","彭雪梅");
+        stringMap.put("3","彭雪梅");
+//        stringMap.put(null,"SB");
+        Set<Map.Entry<String,String>> entries = stringMap.entrySet();
+        entries.removeIf(stringStringEntry -> stringStringEntry.getKey().equals("1"));
+
+
+    }
+
 }
