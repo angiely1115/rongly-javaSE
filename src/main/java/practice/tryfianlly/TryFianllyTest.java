@@ -1,12 +1,13 @@
 package practice.tryfianlly;
 
 import org.junit.jupiter.api.Test;
-import practice.algorithm.sort.SortTest;
 
 /**
  * @Author: lvrongzhuan
  * @Description: 论证 try 中return和finally 中谁先执行
  * 结论： 在try 中 return之后 结果返回之前执行
+ * finally的作用不是改变原有变量的值，主要用来清理资源 释放连接 关闭管道
+ *
  * @Date: 2019/3/22 18:15
  * @Version: 1.0
  * modified by:
@@ -25,6 +26,9 @@ public class TryFianllyTest {
         System.out.println("3最后返回值：" + i);
         System.out.println("----------------------------");
         i = this.test4();
+        System.out.println("4最后返回值：" + i);
+        System.out.println("----------------------------");
+        i = this.test5();
         System.out.println("4最后返回值：" + i);
     }
 
@@ -106,5 +110,19 @@ public class TryFianllyTest {
             }
         }
     }
-
+    private int test5() {
+        int i = 20;
+        try {
+            System.out.println("try brock");
+            i += 80;
+            int b = 2/0;
+            return i;
+        } finally {
+            System.out.println("finally brock");
+            if (i > 25) {
+                System.out.println("i>25:" + i);
+                i -= 60;
+            }
+        }
+    }
 }

@@ -214,4 +214,18 @@ public class JavaIoTest {
         String  topath ="F:\\BaiduNetdiskDownload\\1.avi";
         this.fileCopyByChannel(path,topath);
     }
+
+    /**
+     * path测试
+     */
+    @Test
+    public void testPath() {
+        Path path = Paths.get("D:/uu");
+        System.out.println(path);
+       File file =  path.toFile();
+
+        System.out.println(file.exists());
+        file.mkdir();
+        path.getFileName();
+    }
 }

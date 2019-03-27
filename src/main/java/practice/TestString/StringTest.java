@@ -1,7 +1,15 @@
 package practice.TestString;
 
+import com.google.common.collect.Lists;
+import com.vip.vjtools.vjkit.collection.ListUtil;
+import lombok.var;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.function.Try;
+
+import javax.swing.plaf.ListUI;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author lvrongzhuan
@@ -62,4 +70,21 @@ public class StringTest {
         }
     }
 
+    /**
+     * 练习IDE的一些骚操作
+     */
+    public String testIDE() {
+        String s = "";
+        ArrayList<Object> objects = Lists.newArrayList();
+        for (Object object : objects) {
+
+        }
+        for (int i = 0; i < objects.size(); i++) {
+
+        }
+        if (objects.size()>0) {
+
+        }
+        return s;
+    }
 }
