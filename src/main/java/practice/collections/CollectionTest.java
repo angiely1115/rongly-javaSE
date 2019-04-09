@@ -1,5 +1,6 @@
 package practice.collections;
 
+import com.google.common.collect.Lists;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -141,6 +142,7 @@ public class CollectionTest {
     @Test
     public void toArrayTest(){
         List<String> strings = new ArrayList<>(3);
+        System.out.println(strings.isEmpty());
         strings.add("1");
         strings.add("2");
         strings.add("d");
@@ -180,7 +182,18 @@ public class CollectionTest {
 //        stringMap.put(null,"SB");
         Set<Map.Entry<String,String>> entries = stringMap.entrySet();
         entries.removeIf(stringStringEntry -> stringStringEntry.getKey().equals("1"));
+    }
 
+    /**
+     * 数组转list
+     */
+    @Test
+    public void testArrayToList() {
+        String[] strings = new String[]{"1","2","3"};
+        List<String> stringList = Lists.newArrayList(strings);
+        stringList.removeIf(s->s.equals("2"));
+        System.out.println(stringList);
+        System.out.println(8+8+"gg");
 
     }
 
