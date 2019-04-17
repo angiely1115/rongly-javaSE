@@ -29,7 +29,7 @@ public class TryFianllyTest {
         System.out.println("4最后返回值：" + i);
         System.out.println("----------------------------");
         i = this.test5();
-        System.out.println("4最后返回值：" + i);
+        System.out.println("5最后返回值：" + i);
     }
 
     private int test1() {

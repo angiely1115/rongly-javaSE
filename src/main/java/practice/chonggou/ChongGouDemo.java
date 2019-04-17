@@ -32,6 +32,7 @@ public class ChongGouDemo {
         return num > 5;
     }
 
+
     /**
      * 局部变量被多次使用赋值
      */
@@ -47,7 +48,6 @@ public class ChongGouDemo {
 
     /**
      * 移除对参数的赋值
-     *
      * @param a
      * @param b
      * @param c
@@ -55,6 +55,10 @@ public class ChongGouDemo {
     public int moveParamsAssignment(int a, int b, double c) {
         int atemp = new Acb(a, b).invoke();
         return atemp;
+    }
+
+    public void test1() {
+        this.moveParamsAssignment(1,2,4.0);
     }
 
 
