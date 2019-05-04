@@ -179,6 +179,17 @@ public class CollectionTest {
         stringMap.put("2","赵雅芝");
         stringMap.put("3","彭雪梅");
         stringMap.put("3","彭雪梅");
+        try {
+            stringMap.forEach((k, v) -> {
+                System.out.println(k + " :" + v);
+                throw new RuntimeException("异常了");
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("-----------");
+
+
 //        stringMap.put(null,"SB");
         Set<Map.Entry<String,String>> entries = stringMap.entrySet();
         entries.removeIf(stringStringEntry -> stringStringEntry.getKey().equals("1"));

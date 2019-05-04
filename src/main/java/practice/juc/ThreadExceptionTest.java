@@ -22,7 +22,12 @@ public class ThreadExceptionTest {
         });
         new Thread(()->{
             System.out.println("当前子线程执行："+Thread.currentThread().getName());
-            throw new RuntimeException("异常了");
+            throw new RuntimeException(Thread.currentThread().getName()+"异常了");
+        }).start();
+
+        new Thread(()->{
+            System.out.println("当前子线程执行："+Thread.currentThread().getName());
+            throw new RuntimeException(Thread.currentThread().getName()+"异常了");
         }).start();
     }
 
