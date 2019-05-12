@@ -200,8 +200,14 @@ public class CollectionTest {
      */
     @Test
     public void testArrayToList() {
-        String[] strings = new String[]{"1","2","3"};
+        String[] strings = new String[]{"1","2","3","4","5"};
         List<String> stringList = Lists.newArrayList(strings);
+        for (String s : stringList) {
+            if (s.equals("1")) {
+                // 有问题
+                stringList.remove(s);
+            }
+        }
         stringList.removeIf(s->s.equals("2"));
         System.out.println(stringList);
         System.out.println(8+8+"gg");
