@@ -3,6 +3,7 @@ package practice.lambda;
 import com.sun.org.apache.regexp.internal.RE;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -10,6 +11,9 @@ import java.time.Year;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * @Author: lvrongzhuan
@@ -36,10 +40,10 @@ public class ListToMapTest {
         }
 
     }
+    static List<User> list = new ArrayList<User>();
+    @BeforeAll
+    public static void initData() {
 
-    @Test
-    public void testToMap1() {
-        List<User> list = new ArrayList<User>();
         User u1 = new User("pangHu", 26);
         User u2 = new User("piKaQiu", 15);
         User u3 = new User("laoBi", 20);
@@ -50,6 +54,10 @@ public class ListToMapTest {
         list.add(u3);
         list.add(u4);
         list.add(u5);
+    }
+    @Test
+    public void testToMap1() {
+
         //转换成一个新流
         list.stream().map(User::getUserName).forEach(System.out::println);
         //转换成一个map  key 是userName value 是User对象
@@ -87,8 +95,7 @@ public class ListToMapTest {
             return x + y;
         });
 
-        Long count = list.stream()
-                .collect(Collectors.counting());
+        Long count = list.stream().collect(Collectors.counting());
 
         System.out.println(count);
 
@@ -106,12 +113,48 @@ public class ListToMapTest {
         optionalUser.ifPresent(System.out::println);
         List list1 = list.stream().sorted(Comparator.comparing(u -> u.getAge(), (x, y) -> {
             return Integer.valueOf(y).compareTo(Integer.valueOf(x));
-        })).collect(Collectors.toList());
+        })).collect(toList());
         System.out.println(list1);
 
-        System.out.println(list.stream().map(User::getAge).collect(Collectors.toList()));
+        System.out.println(list.stream().map(User::getAge).collect(toList()));
 
         System.out.println(BigDecimal.ZERO.subtract(BigDecimal.valueOf(1223.06)));
         System.out.println(BigDecimal.ZERO);
+    }
+
+    /**
+     * 测试排序 默认升序
+     */
+    @Test
+    public void testSorted() {
+        list.stream().sorted(Comparator.comparing(User::getAge)).collect(Collectors.toList()).forEach(System.out::println);
+    }
+
+    /**
+     * 测试 flatMap 偏平处理多个流
+     */
+    @Test
+    public void testFlatMap() {
+        List<String> list = new ArrayList<>();
+        list.add("aaa bbb ccc");
+        list.add("ddd eee fff");
+        list.add("ggg hhh iii");
+       list.stream().map(s -> s.split(" ")).flatMap(Arrays::stream).collect(toList()).forEach(System.out::println);
+    }
+
+    /**
+     * 测试 intStream
+     * 因为如果将流转成map会增加装箱拆箱的操作 对性能有一定的影响 可以是intStream操作 使用都是基本类型
+     * int sum = list.stream().map(Person::getAge).reduce(0, Integer::sum);
+     * 计算元素总和的方法其中暗含了装箱成本，map(Person::getAge) 方法过后流变成了 Stream 类型，而每个 Integer 都要拆箱成一个原始类型再进行 sum 方法求和，这样大大影响了效率。
+     * 针对这个问题 Java 8 有良心地引入了数值流 IntStream, DoubleStream, LongStream，
+     * 这种流中的元素都是原始数据类型，分别是 int，double，long
+     * 但是对BigDecimal还无法使用这种方式
+     */
+    @Test
+    public void testIntStream() {
+
+        System.out.println(IntStream.rangeClosed(1,100000000).sum());;
+
     }
 }
