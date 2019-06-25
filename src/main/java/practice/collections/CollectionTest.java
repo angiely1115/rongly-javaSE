@@ -220,4 +220,27 @@ public class CollectionTest {
 
     }
 
+    /**
+     * 行遍历比列遍历性能要高很多
+     * 主要是内存是一个大的一维数组 二维数组在内存是按行排列，是连续的 CPU缓存命中率高
+     */
+    @Test
+    public void test二维数组填充方式性能比较() {
+        Long[][] longs = new Long[10000][10000];
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < longs.length; i++) {
+            for (int j = 0; j < longs[i].length; j++) {
+                longs[i][j] = 1L;
+            }
+        }
+        System.out.println("longs[i][j]耗时："+(System.currentTimeMillis()-startTime));
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < longs.length; i++) {
+            for (int j = 0; j < longs[i].length; j++) {
+                longs[j][i] = 1L;
+            }
+        }
+        System.out.println("longs[j][i]耗时："+(System.currentTimeMillis()-startTime));
+    }
+
 }

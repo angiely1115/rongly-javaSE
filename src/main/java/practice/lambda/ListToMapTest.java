@@ -40,7 +40,9 @@ public class ListToMapTest {
         }
 
     }
+
     static List<User> list = new ArrayList<User>();
+
     @BeforeAll
     public static void initData() {
 
@@ -55,6 +57,7 @@ public class ListToMapTest {
         list.add(u4);
         list.add(u5);
     }
+
     @Test
     public void testToMap1() {
 
@@ -139,7 +142,7 @@ public class ListToMapTest {
         list.add("aaa bbb ccc");
         list.add("ddd eee fff");
         list.add("ggg hhh iii");
-       list.stream().map(s -> s.split(" ")).flatMap(Arrays::stream).collect(toList()).forEach(System.out::println);
+        list.stream().map(s -> s.split(" ")).flatMap(Arrays::stream).collect(toList()).forEach(System.out::println);
     }
 
     /**
@@ -154,7 +157,8 @@ public class ListToMapTest {
     @Test
     public void testIntStream() {
 
-        System.out.println(IntStream.rangeClosed(1,100000000).sum());;
+        System.out.println(IntStream.rangeClosed(1, 100000000).sum());
+        ;
 
     }
 }
