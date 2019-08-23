@@ -161,4 +161,24 @@ public class ListToMapTest {
         ;
 
     }
+
+    public  <E> List<E> getDuplicateElements(List<E> list) {
+        // 获得元素出现频率的 Map，键为元素，值为元素出现的次数
+        return list.stream() // list 对应的 Stream
+                .collect(Collectors.toMap(e -> e, e -> 1, (a, b) -> a + b))
+                .entrySet().stream() // 所有 entry 对应的 Stream
+                .filter(entry -> entry.getValue() > 1) // 过滤出元素出现次数大于 1 的 entry
+                .map(entry -> entry.getKey()) // 获得 entry 的键（重复元素）对应的 Stream
+                .collect(Collectors.toList());  // 转化为 List
+    }
+
+    @Test
+    public  void testListRepeat(){
+        List<String> list = Arrays.asList("a", "b", "c", "d", "a", "a", "d", "d");
+        Set<Map.Entry<String, Integer>> stringMap = list.stream().collect(Collectors.toMap(o -> o, o ->1,(a, b) -> a+b )).entrySet();
+        System.out.println(stringMap);
+        List<String> duplicateElements = getDuplicateElements(list);
+
+        System.out.println("list 中重复的元素：" + duplicateElements);
+    }
 }

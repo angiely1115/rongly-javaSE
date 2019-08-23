@@ -243,4 +243,14 @@ public class CollectionTest {
         System.out.println("longs[j][i]耗时："+(System.currentTimeMillis()-startTime));
     }
 
+    public void test1() {
+        int i = 1;
+        int j = 2;
+        if (i == 1&&j==2) {
+            System.out.println("i == 1");
+        } else if (i == 1) {
+            System.out.println("i == 1");
+        }
+    }
+
 }

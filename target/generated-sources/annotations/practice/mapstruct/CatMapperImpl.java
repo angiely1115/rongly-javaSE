@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2019-05-22T21:13:56+0800",
+    date = "2019-08-02T13:39:07+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_201 (Oracle Corporation)"
 )
 public class CatMapperImpl implements CatMapper {
