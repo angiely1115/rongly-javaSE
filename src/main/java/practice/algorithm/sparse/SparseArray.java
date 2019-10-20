@@ -1,4 +1,4 @@
-package practice.algorithm.sort.sparse;
+package practice.algorithm.sparse;
 
 import lombok.Data;
 
