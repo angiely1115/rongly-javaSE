@@ -1,5 +1,6 @@
 package practice.algorithm.stack;
 
+import lombok.Getter;
 import practice.algorithm.empty.PersonEmpty;
 
 /**
@@ -12,6 +13,7 @@ import practice.algorithm.empty.PersonEmpty;
 public class ArrayStack<T> {
     // 定义栈大小
     private int maxSize;
+    @Getter
     private Object[] arr;
     // 栈顶
     private int top = -1;
@@ -43,23 +45,18 @@ public class ArrayStack<T> {
         arr[top] = t;
     }
 
-    /**
-     * 出栈
-     */
-    public <T> T popStack() {
-        if (isEmpty()) {
-            System.out.println("栈为空");
-            return null;
-        }
-        T t = (T) arr[top];
-        top--;
-        return t;
-    }
-
     public void showStack() {
         for (int i = this.arr.length - 1; i >= 0; i--) {
             System.out.println("arr["+i+"]"+arr[i]);
         }
+    }
+
+    /**
+     * 获取栈顶数据
+     * @return
+     */
+    public T peek() {
+       return (T) arr[top];
     }
 
     public static void main(String[] args) {
@@ -76,5 +73,18 @@ public class ArrayStack<T> {
         emptyArrayStack.popStack();
         emptyArrayStack.popStack();
         emptyArrayStack.showStack();
+    }
+
+    /**
+     * 出栈
+     */
+    public  T popStack() {
+        if (isEmpty()) {
+            System.out.println("栈为空");
+            return null;
+        }
+        T t = (T) arr[top];
+        top--;
+        return t;
     }
 }
