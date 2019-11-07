@@ -4,7 +4,7 @@ import java.util.Base64;
 
 /**
  * @Author: lvrongzhuan
- * @Description: base64 编解码
+ * @Description: base64 编解码 0-63的
  * @Date: 2019/3/22 17:40
  * @Version: 1.0
  * modified by:

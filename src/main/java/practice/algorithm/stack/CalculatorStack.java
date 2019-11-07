@@ -4,7 +4,7 @@ import com.google.common.base.Strings;
 
 /**
  * @Author: lvrongzhuan
- * @Description: 通过栈实现一个简单的计算器表达式
+ * @Description: 通过栈实现一个简单的计算器表达式（中缀表达式）
  * @Date: 2019/10/22 21:42
  * @Version: 1.0
  * modified by:
@@ -75,8 +75,8 @@ public class CalculatorStack {
             return 1;
         } else if (oper == '+' || oper == '-') {
             return 0;
-        } else {
-            return -1; // 假定目前的表达式只有 +, - , * , /
+        }else {
+            return -1;
         }
     }
 }

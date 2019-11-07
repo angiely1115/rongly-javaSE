@@ -49,8 +49,8 @@ public class ListToMapTest {
         User u1 = new User("pangHu", 26);
         User u2 = new User("piKaQiu", 15);
         User u3 = new User("laoBi", 20);
-        User u4 = new User("wangHao", 20);
-        User u5 = new User("wangHao", 26);
+        User u4 = new User("2019-09", 20);
+        User u5 = new User("2019-10", 26);
         list.add(u1);
         list.add(u2);
         list.add(u3);
@@ -74,8 +74,10 @@ public class ListToMapTest {
         System.out.println(map);
 
         //分组
-        map = list.stream().collect(Collectors.groupingBy(User::getUserName));
-        System.out.println(map);
+       Map<String,List<User>> treeMap = list.stream().collect(Collectors.groupingBy(User::getUserName));
+        TreeMap<String,List<User>> listTreeMap = new TreeMap<>((o1, o2) -> o2.compareTo(o1));
+        listTreeMap.putAll(treeMap);
+        System.out.println("treeMap:"+listTreeMap);
         //多级分组
         map = list.stream().collect(Collectors.groupingBy(User::getUserName, Collectors.groupingBy(e -> {
             if (e.getAge() > 60) {
